@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.cursosant.android.userssp.User
 import com.example.userssp.databinding.ItemUserBinding
 
-class UserAdapter (private val users: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
+class UserAdapter(private val users: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
 
     private lateinit var context: Context
 
