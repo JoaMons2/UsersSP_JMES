@@ -1,6 +1,7 @@
 package com.example.userssp
 
 import android.app.ActivityManager
+import android.app.AlarmManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,12 +20,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        userAdapter = UserAdapter(mutableListOf())
+        userAdapter = UserAdapter(getUsers())
         linearLayoutManager = LinearLayoutManager(this)
 
         binding.recyclerView.apply{
             layoutManager = linearLayoutManager
             adapter = userAdapter
         }
+    }
+
+    private fun getUsers(): MutableList<User>{
+        val users = mutableListOf<User>()
+
+        val alain = User(1, "Alain", "Nicolás", "")
+        val samantha = User(2, "Samantha", "Meza", "")
+
+        users.add(alain)
+        users.add(samantha)
+
+        return users
     }
 }
