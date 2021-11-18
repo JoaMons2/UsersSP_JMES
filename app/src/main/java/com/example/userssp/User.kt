@@ -11,5 +11,7 @@ package com.cursosant.android.userssp
  * https://www.udemy.com/user/alain-nicolas-tello/
  ***/
 data class User (val id: Long, var name: String, var lastName: String, var url: String) {
+
+    fun getFullName(): String = "$name $lastName"
     
 }
